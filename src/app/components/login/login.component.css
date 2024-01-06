@@ -1,0 +1,12 @@
+.login-page{
+    display: flex;
+    align-items: center;
+    height: 90vh;
+}
+
+.login-page .form-right{
+    background-image: url(https://cdn.pixabay.com/photo/2012/04/12/23/57/spaceship-31067_960_720.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

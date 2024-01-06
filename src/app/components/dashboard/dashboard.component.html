@@ -1,0 +1,41 @@
+<div *ngIf="authService.isAuthenticatedUser();">
+
+    <div class="container-fluid">
+      <h4 class="my-2">Welcome Space Mission Dashboard </h4>
+      
+      <div class="row">
+        <div class="col-md-8">
+          <h5 class="mt-3 mb-2 text-primary">Our Recent Space Mission Data</h5>
+          <div class="card shadow">
+            <div class="card-body">
+              <!-- <button class="btn btn-warning mb-2 " (click)="clearSelection()">Clear Selection</button> -->
+              <ag-grid-angular 
+              style=" height:75vh"
+              class="ag-theme-quartz"
+              [columnDefs]="colDefs"
+              [defaultColDef]="defaultColDefs"
+              [rowData]="rowData$ | async"
+              [rowSelection]="'multiple'"
+              [animateRows]="true"
+              (gridReady)="onGridReady($event)"
+              (cellClicked)="onCellClicked($event)"
+              >
+              </ag-grid-angular>
+            </div>
+          </div>
+        </div>
+    
+        <div class="col-md-4">
+          <h5 class="mt-3 mb-2 text-primary">Our Successful Mission Record</h5>
+          <div class="card shadow">
+            <div class="card-body">
+              <canvas id="myChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+
+
